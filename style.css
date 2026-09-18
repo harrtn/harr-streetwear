@@ -17,18 +17,17 @@ body {
   padding-top: 0; /* Raja3na el-padding 0 */
 }
 
-/* NAVBAR */
+/* NAVBAR NORMAL (YETHARREK M3A EL-SCROLL) */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 50px;
-  background: rgba(8, 8, 8, 0.8);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-color);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 18px 5%;
+  background-color: #080808;
+  position: relative; /* Yetharrek m3a el-page, ma ya93adch fixe */
+  width: 100%;
+  z-index: 100;
+  border-bottom: 1px solid #1a1a1a;
 }
 
 /* Zid padding-top l-body bch el-Hero section ma tdakhalch taht el-navbar fixe */
