@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap');
+
+:root {
+  --bg-color: #080808;
+  --card-bg: #111111;
+  --accent-color: #ff2a2a;
+  --text-main: #f5f5f7;
+  --text-muted: #888888;
+  --border-color: #1f1f1f;
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  letter-spacing: -0.02em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 50px;
+  background: rgba(8, 8, 8, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.insta-link, .cart-icon {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.insta-link:hover, .cart-icon:hover {
+  background: var(--text-main);
+  color: var(--bg-color);
+  border-color: var(--text-main);
+}
+
+/* HERO SECTION */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 20px;
+  background: radial-gradient(circle at center, #151515 0%, var(--bg-color) 70%);
+}
+
+.hero-tag {
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 8vw, 90px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 0.95;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 16px 40px;
+  background-color: var(--text-main);
+  color: var(--bg-color);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+}
+
+/* ABOUT SECTION */
+.about-section {
+  padding: 80px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.about-section h2 {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.about-section p {
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* SHOP SECTION */
+.shop-container {
+  padding: 100px 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-header h2 {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.product-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 25px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  border-color: #333;
+  transform: translateY(-8px);
+}
+
+.product-img {
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background: #000;
+}
+
+.product-card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.price {
+  font-family: var(--font-heading);
+  color: var(--text-main);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.size-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  background: #181818;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.size-selector label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.size-selector select {
+  background: transparent;
+  color: var(--text-main);
+  border: none;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-add {
+  width: 100%;
+  padding: 16px;
+  background: var(--text-main);
+  color: var(--bg-color);
+  border: none;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-add:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* MODAL LUXE */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(10px);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 480px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 20px; right: 25px;
+  font-size: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  font-family: var(--font-heading);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  background: #181818;
+  border: 1px solid var(--border-color);
+  color: #fff;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  outline: none;
+}
+
+.modal-content input:focus {
+  border-color: var(--text-main);
+}
+
+.btn-whatsapp {
+  width: 100%;
+  padding: 16px;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+/* BRAND LOGO STYLING */
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-logo {
+  height: 40px; /* Tnajam t'beddel el-kobr hna (35px - 50px) */
+  width: auto;
+  object-fit: contain;
+  
+  transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+  transform: scale(1.05);
+}
+/* BRAND LOGO STYLING */
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-logo {
+  height: 100px; /* Baddelna el-kobr men 40px l-70px bch yban akber w wadhah */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  
+  /* Na77i el-background (Ikhter wahda menhom حسب logo mta3ek): */
+  mix-blend-mode: screen; /* Utilisez hadhi ken el-logo background mta3ou AKHAL */
+  /* mix-blend-mode: multiply; */ /* Utilisez hadhi ken el-logo background mta3ou ABYEDH */
+}
+
+.brand-logo:hover {
+  transform: scale(1.05);
+}

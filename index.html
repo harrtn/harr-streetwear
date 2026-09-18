@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حار - Streetwear Brand</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <a href="#" class="logo-container">
+    <img src="logo.png" alt="HARR Logo" class="brand-logo">
+  </a>
+  <div class="nav-links">
+    <a href="https://www.instagram.com/harr.tn" target="_blank" class="insta-link">Instagram</a>
+    <div class="cart-icon" onclick="openCart()">
+      Cart (<span id="cart-count">0</span>)
+    </div>
+  </div>
+</header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <span class="hero-tag">Drop 01 / Limited Edition</span>
+    <h1>TOO SPICY FOR YOU</h1>
+    <p>Tunisian High-End Streetwear</p>
+    <a href="#shop" class="btn-primary">Explore Collection</a>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section">
+    <h2>A PROPOS DE حار</h2>
+    <p>Brand streetwear tunisienne m'inspiriya men el-culture w el-spiciness mta3 Tounes. Limited pieces, high quality.</p>
+  </section>
+
+  <!-- SHOP SECTION -->
+  <section id="shop" class="shop-container">
+    <h2>DROP 01 • TOO SPICY</h2>
+    <div class="products-grid">
+      
+      <!-- Product 1: Black Tee -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="black-tee.jpg" alt="HARR Black Tee - Too Spicy">
+        </div>
+        <h3>HARR "Too Spicy" Tee - Black</h3>
+        <p class="price">55 DT</p>
+        
+        <div class="size-selector">
+          <label>Taille:</label>
+          <select id="size-black">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select>
+        </div>
+
+        <button class="btn-add" onclick="addToCart('HARR Too Spicy Tee (Black)', 55, 'size-black')">Ajouter au panier</button>
+      </div>
+
+      <!-- Product 2: White Tee -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="white-tee.jpg" alt="HARR White Tee - Too Spicy">
+        </div>
+        <h3>HARR "Too Spicy" Tee - Off White</h3>
+        <p class="price">55 DT</p>
+
+        <div class="size-selector">
+          <label>Taille:</label>
+          <select id="size-white">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select>
+        </div>
+
+        <button class="btn-add" onclick="addToCart('HARR Too Spicy Tee (Off White)', 55, 'size-white')">Ajouter au panier</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CART / CHECKOUT MODAL -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCart()">&times;</span>
+      <h2>Panier - حار</h2>
+      
+      <div id="cart-items">
+        <!-- Cart items -->
+      </div>
+
+      <div class="cart-total">
+        Total: <span id="total-price">0</span> DT
+      </div>
+
+      <hr style="border-color:#333; margin: 15px 0;">
+
+      <h3>Informations de livraison</h3>
+      <form id="checkoutForm">
+        <input type="text" id="fullname" placeholder="Esmek w Laqabek" required>
+        <input type="tel" id="phone" placeholder="Numéro de Téléphone (8 chiffres)" required>
+        <input type="text" id="address" placeholder="Adresse complète & Gouvernorat" required>
+        <button type="submit" class="btn-whatsapp">Confirmer la commande (WhatsApp) 🚀</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+  <p><a href="https://www.instagram.com/harr.tn" target="_blank" style="color: #e63946; text-decoration: none; font-weight: bold;">@harr.tn</a> 3la Instagram</p>
+  <p style="margin-top: 8px;">&copy; 2026 حار (HARR) - All Rights Reserved.</p>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
