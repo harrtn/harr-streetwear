@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>حار - Streetwear Brand</title>
+  <title>حار | HARR - High-End Streetwear</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
-  <a href="#" class="logo-container">
-    <img src="logo.png" alt="HARR Logo" class="brand-logo">
-  </a>
-  <div class="nav-links">
-    <a href="https://www.instagram.com/harr.tn" target="_blank" class="insta-link">Instagram</a>
-    <div class="cart-icon" onclick="openCart()">
-      Cart (<span id="cart-count">0</span>)
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="#" class="logo-container">
+      <img src="logo.png" alt="HARR Logo" class="brand-logo">
+    </a>
+    <div class="nav-links">
+      <a href="https://www.instagram.com/harr.tn" target="_blank" class="insta-link">Instagram</a>
+      <div class="cart-icon" onclick="openCart()">
+        Cart (<span id="cart-count">0</span>)
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <!-- HERO SECTION -->
   <section class="hero">
@@ -32,57 +31,64 @@
 
   <!-- ABOUT SECTION -->
   <section class="about-section">
-    <h2>A PROPOS DE حار</h2>
-    <p>Brand streetwear tunisienne m'inspiriya men el-culture w el-spiciness mta3 Tounes. Limited pieces, high quality.</p>
+    <h2>حار . BRAND IDENTITY</h2>
+    <p>Bold design meets minimalist luxury. High-grade streetwear crafted for those who set the culture, not follow it.</p>
   </section>
 
   <!-- SHOP SECTION -->
   <section id="shop" class="shop-container">
-    <h2>DROP 01 • TOO SPICY</h2>
+    <div class="section-header">
+      <h2>Featured Drops</h2>
+    </div>
+
     <div class="products-grid">
-      
-      <!-- Product 1: Black Tee -->
+      <!-- PRODUCT 1 -->
       <div class="product-card">
         <div class="product-img">
-          <img src="black-tee.jpg" alt="HARR Black Tee - Too Spicy">
+          <img src="black-tee.jpg" alt="HARR Black Oversized Tee">
         </div>
-        <h3>HARR "Too Spicy" Tee - Black</h3>
-        <p class="price">55 DT</p>
-        
-        <div class="size-selector">
-          <label>Taille:</label>
-          <select id="size-black">
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-          </select>
+        <div class="product-info">
+          <h3>HARR Black Oversized Tee</h3>
+          <span class="price">55 DT</span>
         </div>
 
-        <button class="btn-add" onclick="addToCart('HARR Too Spicy Tee (Black)', 55, 'size-black')">Ajouter au panier</button>
+        <!-- STREET SIZE SELECTOR -->
+        <div class="size-wrapper">
+          <span class="size-label">SIZE:</span>
+          <div class="size-options" id="size-options-p1">
+            <button type="button" class="size-btn" onclick="selectSize('p1', 'S', this)">S</button>
+            <button type="button" class="size-btn" onclick="selectSize('p1', 'M', this)">M</button>
+            <button type="button" class="size-btn active" onclick="selectSize('p1', 'L', this)">L</button>
+            <button type="button" class="size-btn" onclick="selectSize('p1', 'XL', this)">XL</button>
+          </div>
+        </div>
+
+        <button class="btn-add" onclick="addToCart('HARR Black Oversized Tee', 55, 'p1')">Ajouter au Panier</button>
       </div>
 
-      <!-- Product 2: White Tee -->
+      <!-- PRODUCT 2 -->
       <div class="product-card">
         <div class="product-img">
-          <img src="white-tee.jpg" alt="HARR White Tee - Too Spicy">
+          <img src="white-tee.jpg" alt="HARR White Oversized Tee">
         </div>
-        <h3>HARR "Too Spicy" Tee - Off White</h3>
-        <p class="price">55 DT</p>
-
-        <div class="size-selector">
-          <label>Taille:</label>
-          <select id="size-white">
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-          </select>
+        <div class="product-info">
+          <h3>HARR White Oversized Tee</h3>
+          <span class="price">55 DT</span>
         </div>
 
-        <button class="btn-add" onclick="addToCart('HARR Too Spicy Tee (Off White)', 55, 'size-white')">Ajouter au panier</button>
+        <!-- STREET SIZE SELECTOR -->
+        <div class="size-wrapper">
+          <span class="size-label">SIZE:</span>
+          <div class="size-options" id="size-options-p2">
+            <button type="button" class="size-btn" onclick="selectSize('p2', 'S', this)">S</button>
+            <button type="button" class="size-btn active" onclick="selectSize('p2', 'M', this)">M</button>
+            <button type="button" class="size-btn" onclick="selectSize('p2', 'L', this)">L</button>
+            <button type="button" class="size-btn" onclick="selectSize('p2', 'XL', this)">XL</button>
+          </div>
+        </div>
+
+        <button class="btn-add" onclick="addToCart('HARR White Oversized Tee', 55, 'p2')">Ajouter au Panier</button>
       </div>
-
     </div>
   </section>
 
@@ -92,16 +98,42 @@
       <span class="close" onclick="closeCart()">&times;</span>
       <h2>Panier - حار</h2>
       
-      <div id="cart-items">
-        <!-- Cart items -->
+      <!-- CART ITEMS LIST -->
+      <div id="cart-items"></div>
+
+      <!-- 🎟️ PROMO CODE INPUT BOX -->
+      <div class="promo-box" style="margin: 15px 0; display: flex; gap: 8px;">
+        <input type="text" id="promoInput" placeholder="Code Promo (ex: LIVHAR)" style="margin: 0; text-transform: uppercase;">
+        <button type="button" onclick="applyPromoCode()" style="padding: 10px 15px; background: #333; color: #fff; border: 1px solid #444; border-radius: 6px; cursor: pointer; font-weight: bold;">Appliquer</button>
+      </div>
+      <p id="promoMessage" style="font-size: 12px; margin-bottom: 10px; font-weight: 500;"></p>
+
+      <!-- TOTAL BREAKDOWN -->
+      <div class="cart-summary" style="font-size: 14px; line-height: 1.8; border-top: 1px solid #222; padding-top: 10px;">
+        <div style="display: flex; justify-content: space-between;">
+          <span>Sous-total:</span>
+          <span><span id="subtotal-price">0</span> DT</span>
+        </div>
+
+        <div id="discount-row" style="display: none; justify-content: space-between; color: #25D366;">
+          <span>Remise (Code Promo):</span>
+          <span><span id="discount-price">0</span> DT</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+          <span>Livraison:</span>
+          <span id="shipping-price">8 DT</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; font-size: 18px; font-weight: bold; color: #e63946; margin-top: 5px;">
+          <span>Total:</span>
+          <span><span id="total-price">8</span> DT</span>
+        </div>
       </div>
 
-      <div class="cart-total">
-        Total: <span id="total-price">0</span> DT
-      </div>
+      <hr style="border-color: #222; margin: 15px 0;">
 
-      <hr style="border-color:#333; margin: 15px 0;">
-
+      <!-- DELIVERY FORM -->
       <h3>Informations de livraison</h3>
       <form id="checkoutForm">
         <input type="text" id="fullname" placeholder="Esmek w Laqabek" required>
@@ -112,10 +144,11 @@
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer>
-  <p><a href="https://www.instagram.com/harr.tn" target="_blank" style="color: #e63946; text-decoration: none; font-weight: bold;">@harr.tn</a> 3la Instagram</p>
-  <p style="margin-top: 8px;">&copy; 2026 حار (HARR) - All Rights Reserved.</p>
-</footer>
+    <p><a href="https://www.instagram.com/harr.tn" target="_blank" style="color: #ff2a2a; text-decoration: none; font-weight: bold;">@harr.tn</a> 3la Instagram</p>
+    <p style="margin-top: 8px;">&copy; 2026 حار (HARR) - All Rights Reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
